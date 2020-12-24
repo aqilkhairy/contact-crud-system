@@ -36,7 +36,7 @@ if (isset($_GET['id'])) {
     <form action="update.php?id=<?=$contact['id']?>" method="post">
         <label for="id">ID</label>
         <label for="name">Name</label>
-        <input type="text" name="id" placeholder="1" value="<?=$contact['id']?>" id="id">
+        <input type="text" name="id" placeholder="1" value="<?=$contact['id']?>" id="id" disabled>
         <input type="text" name="name" placeholder="John Doe" value="<?=$contact['name']?>" id="name">
         <label for="email">Email</label>
         <label for="phone">Phone</label>

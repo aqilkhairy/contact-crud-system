@@ -36,7 +36,7 @@ if (isset($_GET['id'])) {
     <?php if ($msg): ?>
     <p><?=$msg?></p>
     <?php else: ?>
-	<p>Are you sure you want to delete contact #<?=$contact['id']?>?</p>
+	<p>Are you sure you want to delete contact '<?=$contact['name']?>' #<?=$contact['id']?>?</p>
     <div class="yesno">
         <a href="delete.php?id=<?=$contact['id']?>&confirm=yes">Yes</a>
         <a href="delete.php?id=<?=$contact['id']?>&confirm=no">No</a>

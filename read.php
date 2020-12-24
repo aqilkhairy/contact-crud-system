@@ -5,7 +5,7 @@ $pdo = pdo_connect_mysql();
 // Get the page via GET request (URL param: page), if non exists default the page to 1
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
 // Number of records to show on each page
-$records_per_page = 5;
+$records_per_page = 6;
 
 // Prepare the SQL statement and get records from our contacts table, LIMIT will determine the page
 $stmt = $pdo->prepare('SELECT * FROM contacts ORDER BY id LIMIT :current_page, :record_per_page');
@@ -17,6 +17,7 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Get the total number of contacts, this is so we can determine whether there should be a next and previous button
 $num_contacts = $pdo->query('SELECT COUNT(*) FROM contacts')->fetchColumn();
+$no = $records_per_page*($page-1)+1;
 ?>
 
 <?=template_header('Read')?>
@@ -37,9 +38,9 @@ $num_contacts = $pdo->query('SELECT COUNT(*) FROM contacts')->fetchColumn();
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($contacts as $contact): ?>
+            <?php foreach ($contacts as $contact):?>
             <tr>
-                <td><?=$contact['id']?></td>
+                <td><?=$no?></td>
                 <td><?=$contact['name']?></td>
                 <td><?=$contact['email']?></td>
                 <td><?=$contact['phone']?></td>
@@ -50,7 +51,7 @@ $num_contacts = $pdo->query('SELECT COUNT(*) FROM contacts')->fetchColumn();
                     <a href="delete.php?id=<?=$contact['id']?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
                 </td>
             </tr>
-            <?php endforeach; ?>
+            <?php $no++; endforeach; ?>
         </tbody>
     </table>
 	<div class="pagination">

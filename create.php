@@ -28,7 +28,7 @@ if (!empty($_POST)) {
     <form action="create.php" method="post">
         <label for="id">ID</label>
         <label for="name">Name</label>
-        <input type="text" name="id" placeholder="26" value="auto" id="id">
+        <input type="text" name="id" placeholder="auto-generated" id="id" disabled>
         <input type="text" name="name" placeholder="John Doe" id="name">
         <label for="email">Email</label>
         <label for="phone">Phone</label>
