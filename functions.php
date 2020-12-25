@@ -27,7 +27,7 @@ echo <<<EOT
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	</head>
-	<body>
+	<body class="classbody">
     <nav class="navtop">
     	<div>
     		<h1>Contact Management System</h1>

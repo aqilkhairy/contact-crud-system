@@ -6,8 +6,7 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-    background-color: #FFFFFF;
+.classbody {
     margin: 0;
 }
 
@@ -231,4 +230,81 @@ body {
 
 .delete .yesno a:hover {
     background-color: #32a367;
+}
+
+.msg {
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 0 0 8px #ff1717;
+    background-color: #cf2828;
+    width: fit-content;
+    padding: 20px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 80px;
+}
+
+.loginbg {
+    padding-top: 15%;
+    padding-bottom: 15%;
+    padding-left: 35%;
+    padding-right: 35%;
+}
+
+.login .box {
+    border-radius: 20px;
+    box-shadow: 0 0 8px #1f1f1f;
+    background-color: #666666;
+    width: fit-content;
+    padding: 30px;
+}
+
+.login label {
+    color: white;
+}
+
+.login .cell-label {
+    text-align: right;
+    vertical-align: middle;
+}
+
+.login .cell-btn {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.login .btn {
+    border-radius: 20px;
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 40%;
+    outline: none;
+}
+
+.login .btn:hover {
+    transition: 0.2s ease-in;
+    background-color: #38b673;
+    color: white;
+    border-color: white;
+    box-shadow: 0 0 12px #ffffff;
+}
+
+.login .inputbox {
+    border-radius: 25px;
+    background-color: #00000070;
+    border-color: #363636d5;
+    outline: none;
+    text-align: center;
+    padding: 2px;
+    color: white;
+}
+
+.login .inputbox:hover,
+.login .inputbox:focus {
+    border-color: #c1eb4e;
+    box-shadow: 0 0 8px #ffffff;
+    background-color: white;
+    transition: 0.12s ease-in;
+    color: black;
 }
