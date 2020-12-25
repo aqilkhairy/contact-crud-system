@@ -1,17 +1,23 @@
 <?php
+if(!isset($_SESSION)) { 
+	session_start();
+}
 function pdo_connect_mysql() {
     $DATABASE_HOST = 'localhost';
     $DATABASE_USER = 'root';
     $DATABASE_PASS = '';
     $DATABASE_NAME = 'contact_management_system';
     try {
-    	return new PDO('mysql:host=' . $DATABASE_HOST . ';dbname=' . $DATABASE_NAME . ';charset=utf8', $DATABASE_USER, $DATABASE_PASS);
-    } catch (PDOException $exception) {
+    	$db = new PDO('mysql:host=' . $DATABASE_HOST . ';dbname=' . $DATABASE_NAME . ';charset=utf8', $DATABASE_USER, $DATABASE_PASS);
+		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		return $db;
+	} catch (PDOException $exception) {
     	// If there is an error with the connection, stop the script and display the error.
     	exit('Failed to connect to database!');
     }
 }
 function template_header($title) {
+	
 echo <<<EOT
 <!DOCTYPE html>
 <html>
@@ -36,5 +42,11 @@ echo <<<EOT
     </body>
 </html>
 EOT;
+}
+
+function sessionCheck() {
+	if(!isset($_SESSION["logged_in"])) {
+		header("location: login.php");
+	}
 }
 ?>

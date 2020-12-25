@@ -20,6 +20,7 @@ $num_contacts = $pdo->query('SELECT COUNT(*) FROM contacts')->fetchColumn();
 $no = $records_per_page*($page-1)+1;
 ?>
 
+<?php sessionCheck(); ?>
 <?=template_header('Read')?>
 
 <div class="content read">

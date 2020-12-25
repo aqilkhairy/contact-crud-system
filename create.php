@@ -21,6 +21,7 @@ if (!empty($_POST)) {
 }
 ?>
 
+<?php sessionCheck(); ?>
 <?=template_header('Create')?>
 
 <div class="content update">

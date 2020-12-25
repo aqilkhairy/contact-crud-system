@@ -13,8 +13,8 @@ if (isset($_GET['id'])) {
         $title = isset($_POST['title']) ? $_POST['title'] : '';
         $created = isset($_POST['created']) ? $_POST['created'] : date('Y-m-d H:i:s');
         // Update the record
-        $stmt = $pdo->prepare('UPDATE contacts SET id = ?, name = ?, email = ?, phone = ?, title = ?, created = ? WHERE id = ?');
-        $stmt->execute([$id, $name, $email, $phone, $title, $created, $_GET['id']]);
+        $stmt = $pdo->prepare('UPDATE contacts SET name = ?, email = ?, phone = ?, title = ?, created = ? WHERE id = ?');
+        $stmt->execute([$name, $email, $phone, $title, $created, $_GET['id']]);
         $msg = 'Updated Successfully!';
     }
     // Get the contact from the contacts table
@@ -29,6 +29,7 @@ if (isset($_GET['id'])) {
 }
 ?>
 
+<?php sessionCheck(); ?>
 <?=template_header('Read')?>
 
 <div class="content update">

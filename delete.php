@@ -29,6 +29,7 @@ if (isset($_GET['id'])) {
 }
 ?>
 
+<?php sessionCheck(); ?>
 <?=template_header('Delete')?>
 
 <div class="content delete">
